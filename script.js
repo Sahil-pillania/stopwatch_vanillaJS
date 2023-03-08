@@ -6,7 +6,6 @@ const start = document.getElementById("start");
 const stop = document.getElementById("stop");
 const reset = document.getElementById("reset");
 
-// msec.innerHTML =
 var Interval;
 start.addEventListener("click", () => {
   Interval = setInterval(() => {
@@ -18,7 +17,7 @@ start.addEventListener("click", () => {
 
     if (msec.innerHTML == 100) {
       msec.innerHTML = 0;
-      //   sec.innerHTML = parseInt(sec.innerHTML) + 1;
+
       secFunc();
     }
   }, 10);
@@ -26,7 +25,6 @@ start.addEventListener("click", () => {
 
 // handling secs
 var secFunc = () => {
-  // sec.innerHTML = parseInt(sec.innerHTML) + 1;
   sec.innerHTML++;
   if (sec.innerHTML <= 9) {
     sec.innerHTML = "0" + sec.innerHTML;
@@ -34,7 +32,7 @@ var secFunc = () => {
 
   if (sec.innerHTML == 60) {
     sec.innerHTML = 0;
-    // min.innerHTML = parseInt(min.innerHTML) + 1;
+
     minFunc();
   } else {
   }
@@ -42,14 +40,13 @@ var secFunc = () => {
 
 // handling mins
 var minFunc = () => {
-  // sec.innerHTML = parseInt(sec.innerHTML) + 1;
   if (min.innerHTML <= 9) {
     min.innerHTML = "0" + min.innerHTML;
   }
 
   if (min.innerHTML >= 60) {
     min.innerHTML = 0;
-    // hrs.innerHTML = parseInt(hrs.innerHTML) + 1;
+
     hrsFunc();
   } else {
     min.innerHTML++;
@@ -57,14 +54,13 @@ var minFunc = () => {
 };
 // handling hours
 var hrsFunc = () => {
-  // sec.innerHTML = parseInt(sec.innerHTML) + 1;
   if (hrs.innerHTML <= 9) {
     hrs.innerHTML = "0" + hrs.innerHTML;
   }
 
   if (hrs.innerHTML >= 60) {
     hrs.innerHTML = 0;
-    // hrs.innerHTML = parseInt(hrs.innerHTML) + 1;
+
     stopFunc();
     alert("Timer is fully filled");
   } else {
